@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 namespace WccPcm
 {
     public partial class MainForm : Form
-    {
+    {        
         private BindingSource dataSource;
         private WccProject selectedWccProject;
         //private IAppDataBase appDataBase;
@@ -782,6 +782,15 @@ namespace WccPcm
             if(this.SelectedProject != null)
             {
                 LoggerForm form = new LoggerForm(this.SelectedProject);
+                form.Show();
+            }            
+        }
+
+        private void btnPara_Click(object sender, EventArgs e)
+        {
+            if(SelectedProject != null)
+            {
+                para form = new para(SelectedProject.MachineName);
                 form.Show();
             }            
         }

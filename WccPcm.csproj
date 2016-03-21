@@ -20,7 +20,7 @@
     <AssemblyVersionSettings>None.IncrementOnDemandWithReset.Increment.TimeStamp</AssemblyVersionSettings>
     <AssemblyFileVersionSettings>None.IncrementOnDemandWithReset.Increment.TimeStamp</AssemblyFileVersionSettings>
     <AssemblyInfoVersionSettings>None.IncrementOnDemandWithReset.Increment.TimeStamp</AssemblyInfoVersionSettings>
-    <AssemblyVersion>1.2.339.1637</AssemblyVersion>
+    <AssemblyVersion>1.2.387.1748</AssemblyVersion>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -71,6 +71,7 @@
     <PlatformTarget>x64</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
     <OutputPath>bin\x64\Release\</OutputPath>
@@ -80,9 +81,14 @@
     <PlatformTarget>x64</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CookComputing.XmlRpcV2">
+      <HintPath>Packages\CookComputing.XmlRpcV2.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
@@ -101,17 +107,22 @@
     <Compile Include="AppDataGridView.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Core\EncryptContainer.cs" />
-    <Compile Include="Core\IWccControl.cs" />
-    <Compile Include="Core\IWccProjectInfo.cs" />
-    <Compile Include="Core\Debugger.cs" />
-    <Compile Include="Core\LogReader.cs" />
-    <Compile Include="Core\WccManager.cs" />
-    <Compile Include="Core\WccManagerCollection.cs" />
-    <Compile Include="Core\WccNodeTag.cs" />
-    <Compile Include="Core\WccProject.cs" />
-    <Compile Include="Core\WccProjectCollection.cs" />
-    <Compile Include="Core\WccTcp.cs" />
+    <Compile Include="Common\EncryptContainer.cs" />
+    <Compile Include="Common\IWccControl.cs" />
+    <Compile Include="Common\IWccProjectInfo.cs" />
+    <Compile Include="Common\Debugger.cs" />
+    <Compile Include="Common\LogReader.cs" />
+    <Compile Include="Common\WccManager.cs" />
+    <Compile Include="Common\WccManagerCollection.cs" />
+    <Compile Include="Common\WccNodeTag.cs" />
+    <Compile Include="Common\WccProject.cs" />
+    <Compile Include="Common\WccProjectCollection.cs" />
+    <Compile Include="Common\WccTcp.cs" />
+    <Compile Include="DataProvider\IWccDataProvider.cs" />
+    <Compile Include="DataProvider\Types\DatapointElement.cs" />
+    <Compile Include="DataProvider\Types\ElementType.cs" />
+    <Compile Include="DataProvider\Types\WccTimedValue.cs" />
+    <Compile Include="DataProvider\WccDataProvider.cs" />
     <Compile Include="LoggerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +141,12 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="para.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="para.Designer.cs">
+      <DependentUpon>para.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="ProjectSettings.cs">
       <SubType>Form</SubType>
@@ -144,11 +161,17 @@
     <Compile Include="SystemManagment.Designer.cs">
       <DependentUpon>SystemManagment.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataProvider\Types\Datapoint.cs" />
+    <Compile Include="DataProvider\Types\DatapointType.cs" />
+    <Compile Include="DataProvider\IWccXmlRpc.cs" />
     <EmbeddedResource Include="LoggerForm.resx">
       <DependentUpon>LoggerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="para.resx">
+      <DependentUpon>para.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProjectSettings.resx">
       <DependentUpon>ProjectSettings.cs</DependentUpon>
@@ -166,6 +189,7 @@
     <EmbeddedResource Include="SystemManagment.resx">
       <DependentUpon>SystemManagment.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -206,6 +230,7 @@
     <Content Include="Images\vision_32x32.ico" />
     <None Include="Resources\btnStopObserve.Image.bmp" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

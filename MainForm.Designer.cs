@@ -33,11 +33,22 @@
             this.treeView = new System.Windows.Forms.TreeView();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.gbPmon = new System.Windows.Forms.GroupBox();
+            this.btnKillManager = new WccPcm.AppButton();
+            this.btnStopManager = new WccPcm.AppButton();
+            this.btnStartManager = new WccPcm.AppButton();
+            this.dataGridView = new WccPcm.AppDataGridView();
             this.gbProjectControl = new System.Windows.Forms.GroupBox();
+            this.btnLogViewer = new WccPcm.AppButton();
+            this.btnStopProject = new WccPcm.AppButton();
+            this.btnStartProject = new WccPcm.AppButton();
+            this.btnStartObserve = new WccPcm.AppButton();
             this.btnImage = new System.Windows.Forms.ImageList(this.components);
+            this.btnSettingProject = new WccPcm.AppButton();
             this.lProjectName = new System.Windows.Forms.Label();
             this.txtProjectName = new System.Windows.Forms.TextBox();
             this.gbTools = new System.Windows.Forms.GroupBox();
+            this.btnPara = new WccPcm.AppButton();
+            this.btnSysManagment = new WccPcm.AppButton();
             this.treeContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.добавитьУзелToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.добавитьПроектToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,23 +62,13 @@
             this.rootAddNode = new System.Windows.Forms.ToolStripMenuItem();
             this.rootAddProject = new System.Windows.Forms.ToolStripMenuItem();
             this.debugViewer = new WccPcm.DebugViewer();
-            this.btnSysManagment = new WccPcm.AppButton();
-            this.btnLogViewer = new WccPcm.AppButton();
-            this.btnStopProject = new WccPcm.AppButton();
-            this.btnStartProject = new WccPcm.AppButton();
-            this.btnStartObserve = new WccPcm.AppButton();
-            this.btnSettingProject = new WccPcm.AppButton();
-            this.btnKillManager = new WccPcm.AppButton();
-            this.btnStopManager = new WccPcm.AppButton();
-            this.btnStartManager = new WccPcm.AppButton();
-            this.dataGridView = new WccPcm.AppDataGridView();
             this.gbPmon.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.gbProjectControl.SuspendLayout();
             this.gbTools.SuspendLayout();
             this.treeContextMenu.SuspendLayout();
             this.projectNodeContextMenu.SuspendLayout();
             this.rootContextMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // treeView
@@ -99,6 +100,7 @@
             this.gbPmon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbPmon.Controls.Add(this.btnPara);
             this.gbPmon.Controls.Add(this.btnKillManager);
             this.gbPmon.Controls.Add(this.btnStopManager);
             this.gbPmon.Controls.Add(this.btnStartManager);
@@ -111,6 +113,60 @@
             this.gbPmon.TabStop = false;
             this.gbPmon.Text = "Мониторинг за проектом";
             this.gbPmon.Visible = false;
+            // 
+            // btnKillManager
+            // 
+            this.btnKillManager.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnKillManager.Enabled = false;
+            this.btnKillManager.Image = ((System.Drawing.Image)(resources.GetObject("btnKillManager.Image")));
+            this.btnKillManager.Location = new System.Drawing.Point(623, 91);
+            this.btnKillManager.Name = "btnKillManager";
+            this.btnKillManager.Size = new System.Drawing.Size(30, 30);
+            this.btnKillManager.TabIndex = 18;
+            this.btnKillManager.UseVisualStyleBackColor = true;
+            this.btnKillManager.Click += new System.EventHandler(this.btnKillManager_Click);
+            // 
+            // btnStopManager
+            // 
+            this.btnStopManager.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnStopManager.Enabled = false;
+            this.btnStopManager.Image = ((System.Drawing.Image)(resources.GetObject("btnStopManager.Image")));
+            this.btnStopManager.Location = new System.Drawing.Point(623, 55);
+            this.btnStopManager.Name = "btnStopManager";
+            this.btnStopManager.Size = new System.Drawing.Size(30, 30);
+            this.btnStopManager.TabIndex = 17;
+            this.btnStopManager.UseVisualStyleBackColor = true;
+            this.btnStopManager.Click += new System.EventHandler(this.btnStopManager_Click);
+            // 
+            // btnStartManager
+            // 
+            this.btnStartManager.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnStartManager.Enabled = false;
+            this.btnStartManager.Image = ((System.Drawing.Image)(resources.GetObject("btnStartManager.Image")));
+            this.btnStartManager.Location = new System.Drawing.Point(623, 19);
+            this.btnStartManager.Name = "btnStartManager";
+            this.btnStartManager.Size = new System.Drawing.Size(30, 30);
+            this.btnStartManager.TabIndex = 16;
+            this.btnStartManager.UseVisualStyleBackColor = true;
+            this.btnStartManager.Click += new System.EventHandler(this.btnStartManager_Click);
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.AllowUserToResizeRows = false;
+            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Location = new System.Drawing.Point(6, 19);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
+            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView.Size = new System.Drawing.Size(611, 391);
+            this.dataGridView.TabIndex = 1;
+            this.dataGridView.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_RowEnter);
             // 
             // gbProjectControl
             // 
@@ -132,12 +188,69 @@
             this.gbProjectControl.Text = "Управление проектом";
             this.gbProjectControl.Visible = false;
             // 
+            // btnLogViewer
+            // 
+            this.btnLogViewer.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnLogViewer.Enabled = false;
+            this.btnLogViewer.Image = ((System.Drawing.Image)(resources.GetObject("btnLogViewer.Image")));
+            this.btnLogViewer.Location = new System.Drawing.Point(623, 19);
+            this.btnLogViewer.Name = "btnLogViewer";
+            this.btnLogViewer.Size = new System.Drawing.Size(30, 30);
+            this.btnLogViewer.TabIndex = 18;
+            this.btnLogViewer.UseVisualStyleBackColor = true;
+            this.btnLogViewer.Click += new System.EventHandler(this.btnLogViewer_Click);
+            // 
+            // btnStopProject
+            // 
+            this.btnStopProject.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnStopProject.Enabled = false;
+            this.btnStopProject.Image = ((System.Drawing.Image)(resources.GetObject("btnStopProject.Image")));
+            this.btnStopProject.Location = new System.Drawing.Point(587, 19);
+            this.btnStopProject.Name = "btnStopProject";
+            this.btnStopProject.Size = new System.Drawing.Size(30, 30);
+            this.btnStopProject.TabIndex = 15;
+            this.btnStopProject.UseVisualStyleBackColor = true;
+            this.btnStopProject.Click += new System.EventHandler(this.btnStopProject_Click);
+            // 
+            // btnStartProject
+            // 
+            this.btnStartProject.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnStartProject.Enabled = false;
+            this.btnStartProject.Image = ((System.Drawing.Image)(resources.GetObject("btnStartProject.Image")));
+            this.btnStartProject.Location = new System.Drawing.Point(551, 19);
+            this.btnStartProject.Name = "btnStartProject";
+            this.btnStartProject.Size = new System.Drawing.Size(30, 30);
+            this.btnStartProject.TabIndex = 14;
+            this.btnStartProject.UseVisualStyleBackColor = true;
+            this.btnStartProject.Click += new System.EventHandler(this.btnStartProject_Click);
+            // 
+            // btnStartObserve
+            // 
+            this.btnStartObserve.ImageIndex = 1;
+            this.btnStartObserve.ImageList = this.btnImage;
+            this.btnStartObserve.Location = new System.Drawing.Point(42, 18);
+            this.btnStartObserve.Name = "btnStartObserve";
+            this.btnStartObserve.Size = new System.Drawing.Size(30, 30);
+            this.btnStartObserve.TabIndex = 13;
+            this.btnStartObserve.UseVisualStyleBackColor = true;
+            this.btnStartObserve.Click += new System.EventHandler(this.btnStartObserve_Click);
+            // 
             // btnImage
             // 
             this.btnImage.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("btnImage.ImageStream")));
             this.btnImage.TransparentColor = System.Drawing.Color.Transparent;
             this.btnImage.Images.SetKeyName(0, "stop_30.png");
             this.btnImage.Images.SetKeyName(1, "play_20.png");
+            // 
+            // btnSettingProject
+            // 
+            this.btnSettingProject.Image = ((System.Drawing.Image)(resources.GetObject("btnSettingProject.Image")));
+            this.btnSettingProject.Location = new System.Drawing.Point(6, 18);
+            this.btnSettingProject.Name = "btnSettingProject";
+            this.btnSettingProject.Size = new System.Drawing.Size(30, 30);
+            this.btnSettingProject.TabIndex = 12;
+            this.btnSettingProject.UseVisualStyleBackColor = true;
+            this.btnSettingProject.Click += new System.EventHandler(this.btnSettingProject_Click);
             // 
             // lProjectName
             // 
@@ -170,6 +283,28 @@
             this.gbTools.Size = new System.Drawing.Size(858, 46);
             this.gbTools.TabIndex = 4;
             this.gbTools.TabStop = false;
+            // 
+            // btnPara
+            // 
+            this.btnPara.Image = ((System.Drawing.Image)(resources.GetObject("btnPara.Image")));
+            this.btnPara.Location = new System.Drawing.Point(623, 380);
+            this.btnPara.Name = "btnPara";
+            this.btnPara.Size = new System.Drawing.Size(30, 30);
+            this.btnPara.TabIndex = 18;
+            this.btnPara.UseVisualStyleBackColor = true;
+            this.btnPara.Click += new System.EventHandler(this.btnPara_Click);
+            // 
+            // btnSysManagment
+            // 
+            this.btnSysManagment.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnSysManagment.Enabled = false;
+            this.btnSysManagment.Image = ((System.Drawing.Image)(resources.GetObject("btnSysManagment.Image")));
+            this.btnSysManagment.Location = new System.Drawing.Point(6, 10);
+            this.btnSysManagment.Name = "btnSysManagment";
+            this.btnSysManagment.Size = new System.Drawing.Size(30, 30);
+            this.btnSysManagment.TabIndex = 17;
+            this.btnSysManagment.UseVisualStyleBackColor = true;
+            this.btnSysManagment.Visible = false;
             // 
             // treeContextMenu
             // 
@@ -243,7 +378,7 @@
             this.rootAddNode,
             this.rootAddProject});
             this.rootContextMenu.Name = "treeContextMenu";
-            this.rootContextMenu.Size = new System.Drawing.Size(168, 70);
+            this.rootContextMenu.Size = new System.Drawing.Size(168, 48);
             // 
             // rootAddNode
             // 
@@ -275,129 +410,6 @@
             this.debugViewer.TabIndex = 0;
             this.debugViewer.WordWrap = false;
             // 
-            // btnSysManagment
-            // 
-            this.btnSysManagment.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnSysManagment.Enabled = false;
-            this.btnSysManagment.Image = ((System.Drawing.Image)(resources.GetObject("btnSysManagment.Image")));
-            this.btnSysManagment.Location = new System.Drawing.Point(6, 10);
-            this.btnSysManagment.Name = "btnSysManagment";
-            this.btnSysManagment.Size = new System.Drawing.Size(30, 30);
-            this.btnSysManagment.TabIndex = 17;
-            this.btnSysManagment.UseVisualStyleBackColor = true;
-            this.btnSysManagment.Visible = false;
-            // 
-            // btnLogViewer
-            // 
-            this.btnLogViewer.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnLogViewer.Enabled = false;
-            this.btnLogViewer.Image = ((System.Drawing.Image)(resources.GetObject("btnLogViewer.Image")));
-            this.btnLogViewer.Location = new System.Drawing.Point(623, 19);
-            this.btnLogViewer.Name = "btnLogViewer";
-            this.btnLogViewer.Size = new System.Drawing.Size(30, 30);
-            this.btnLogViewer.TabIndex = 18;
-            this.btnLogViewer.UseVisualStyleBackColor = true;
-            this.btnLogViewer.Click += new System.EventHandler(this.btnLogViewer_Click);
-            // 
-            // btnStopProject
-            // 
-            this.btnStopProject.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnStopProject.Enabled = false;
-            this.btnStopProject.Image = ((System.Drawing.Image)(resources.GetObject("btnStopProject.Image")));
-            this.btnStopProject.Location = new System.Drawing.Point(587, 19);
-            this.btnStopProject.Name = "btnStopProject";
-            this.btnStopProject.Size = new System.Drawing.Size(30, 30);
-            this.btnStopProject.TabIndex = 15;
-            this.btnStopProject.UseVisualStyleBackColor = true;
-            this.btnStopProject.Click += new System.EventHandler(this.btnStopProject_Click);
-            // 
-            // btnStartProject
-            // 
-            this.btnStartProject.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnStartProject.Enabled = false;
-            this.btnStartProject.Image = ((System.Drawing.Image)(resources.GetObject("btnStartProject.Image")));
-            this.btnStartProject.Location = new System.Drawing.Point(551, 19);
-            this.btnStartProject.Name = "btnStartProject";
-            this.btnStartProject.Size = new System.Drawing.Size(30, 30);
-            this.btnStartProject.TabIndex = 14;
-            this.btnStartProject.UseVisualStyleBackColor = true;
-            this.btnStartProject.Click += new System.EventHandler(this.btnStartProject_Click);
-            // 
-            // btnStartObserve
-            // 
-            this.btnStartObserve.ImageIndex = 1;
-            this.btnStartObserve.ImageList = this.btnImage;
-            this.btnStartObserve.Location = new System.Drawing.Point(42, 18);
-            this.btnStartObserve.Name = "btnStartObserve";
-            this.btnStartObserve.Size = new System.Drawing.Size(30, 30);
-            this.btnStartObserve.TabIndex = 13;
-            this.btnStartObserve.UseVisualStyleBackColor = true;
-            this.btnStartObserve.Click += new System.EventHandler(this.btnStartObserve_Click);
-            // 
-            // btnSettingProject
-            // 
-            this.btnSettingProject.Image = ((System.Drawing.Image)(resources.GetObject("btnSettingProject.Image")));
-            this.btnSettingProject.Location = new System.Drawing.Point(6, 18);
-            this.btnSettingProject.Name = "btnSettingProject";
-            this.btnSettingProject.Size = new System.Drawing.Size(30, 30);
-            this.btnSettingProject.TabIndex = 12;
-            this.btnSettingProject.UseVisualStyleBackColor = true;
-            this.btnSettingProject.Click += new System.EventHandler(this.btnSettingProject_Click);
-            // 
-            // btnKillManager
-            // 
-            this.btnKillManager.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnKillManager.Enabled = false;
-            this.btnKillManager.Image = ((System.Drawing.Image)(resources.GetObject("btnKillManager.Image")));
-            this.btnKillManager.Location = new System.Drawing.Point(623, 91);
-            this.btnKillManager.Name = "btnKillManager";
-            this.btnKillManager.Size = new System.Drawing.Size(30, 30);
-            this.btnKillManager.TabIndex = 18;
-            this.btnKillManager.UseVisualStyleBackColor = true;
-            this.btnKillManager.Click += new System.EventHandler(this.btnKillManager_Click);
-            // 
-            // btnStopManager
-            // 
-            this.btnStopManager.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnStopManager.Enabled = false;
-            this.btnStopManager.Image = ((System.Drawing.Image)(resources.GetObject("btnStopManager.Image")));
-            this.btnStopManager.Location = new System.Drawing.Point(623, 55);
-            this.btnStopManager.Name = "btnStopManager";
-            this.btnStopManager.Size = new System.Drawing.Size(30, 30);
-            this.btnStopManager.TabIndex = 17;
-            this.btnStopManager.UseVisualStyleBackColor = true;
-            this.btnStopManager.Click += new System.EventHandler(this.btnStopManager_Click);
-            // 
-            // btnStartManager
-            // 
-            this.btnStartManager.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnStartManager.Enabled = false;
-            this.btnStartManager.Image = ((System.Drawing.Image)(resources.GetObject("btnStartManager.Image")));
-            this.btnStartManager.Location = new System.Drawing.Point(623, 19);
-            this.btnStartManager.Name = "btnStartManager";
-            this.btnStartManager.Size = new System.Drawing.Size(30, 30);
-            this.btnStartManager.TabIndex = 16;
-            this.btnStartManager.UseVisualStyleBackColor = true;
-            this.btnStartManager.Click += new System.EventHandler(this.btnStartManager_Click);
-            // 
-            // dataGridView
-            // 
-            this.dataGridView.AllowUserToAddRows = false;
-            this.dataGridView.AllowUserToResizeRows = false;
-            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.ReadOnly = true;
-            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(611, 391);
-            this.dataGridView.TabIndex = 1;
-            this.dataGridView.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_RowEnter);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -415,13 +427,13 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.gbPmon.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.gbProjectControl.ResumeLayout(false);
             this.gbProjectControl.PerformLayout();
             this.gbTools.ResumeLayout(false);
             this.treeContextMenu.ResumeLayout(false);
             this.projectNodeContextMenu.ResumeLayout(false);
             this.rootContextMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -473,6 +485,7 @@
         private DebugViewer debugViewer;
         private AppButton btnSysManagment;
         private AppButton btnLogViewer;
+        private AppButton btnPara;
     }
 }
 
